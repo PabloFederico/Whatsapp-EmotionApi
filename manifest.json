@@ -12,6 +12,7 @@
    "content_scripts": [{
       "js": ["js/jquery-3.2.1.js","background.js"],
       "matches": [ "https://www.google.com.ar/*", "https://www.google.com.ar/" ],
+	  "css": ["css/bootstrap.min.css", "css/bootstrap-theme.css"],
 	  "run_at": "document_end"
    }],
    "permissions": [
