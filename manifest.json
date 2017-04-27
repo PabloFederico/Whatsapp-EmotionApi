@@ -1,0 +1,25 @@
+{
+   "manifest_version": 2,
+   "author": "Pablo Federico",
+   "name": "WhatsApp Emotion Api",
+   "description": "Emotion Api from web whatsapp",
+   "version": "1.0",
+   "short_name": "Emotion API",
+   "browser_action": {
+   },
+   "icons": {
+   },
+   "content_scripts": [{
+      "js": ["js/jquery-3.2.1.js","background.js"],
+      "matches": [ "https://www.google.com.ar/*", "https://www.google.com.ar/" ],
+	  "run_at": "document_end"
+   }],
+   "permissions": [
+      "activeTab",
+	  "https://ajax.googleapis.com/",
+      "storage",
+      "webRequest", 
+      "*://web.whatsapp.com/", 
+      "*://web.whatsapp.com/?*"
+   ]
+}
