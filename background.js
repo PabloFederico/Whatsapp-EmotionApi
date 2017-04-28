@@ -2,9 +2,31 @@
 
 $("document").ready(function(){
 	
-	createQuestionDiv();
-		
+	if(!isInCacheData())	
+		createQuestionDiv();
+	
+	$("#button_ok").click(function(){
+		savePersonalData($("#sexo").val(),$("#edad").val());
+	});
 })
+
+function savePersonalData(sexo,edad){
+		
+	localStorage.setItem("Sexo",sexo);
+	localStorage.setItem("Edad",edad);
+	
+}
+
+function isInCacheData(){
+	
+	var exists = true;
+	var sexo = localStorage.getItem("Sexo");
+	var edad = localStorage.getItem("Edad");
+	
+	if(sexo == null || edad == null)
+			exists = false;
+	return exists;
+}
 
 function createQuestionDiv(){
 	
@@ -36,9 +58,22 @@ function createQuestionDiv(){
 	col2.innerHTML = "<p>EDAD</p><input type='text' class='form-control' id='edad' style='width:90% !important;margin-left:5% !important;' id='edad'>";
 	
 	row.appendChild(col1);
-	row.appendChild(col2);
-	
+	row.appendChild(col2);	
 	div.appendChild(row);
+	
+	var row2 = document.createElement("div");
+	row2.className = "row";
+	row2.style.textAlign = "center";
+	row2.style.color = "white";
+	
+	var coldown = document.createElement("div");
+	coldown.className = "col-md-12";
+	coldown.innerHTML = "<button id='button_ok'>OK!</button>";	
+	
+	row2.appendChild(coldown);
+	
+	div.appendChild(row2);
+	
 	document.body.appendChild(div);
 	
 }
