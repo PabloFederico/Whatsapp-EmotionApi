@@ -4,8 +4,8 @@ $("document").ready(function(){
 	
 	//if(!isInCacheData())	
 		//createQuestionDiv();
-	
-	createFacesDiv();
+	setInterval(function(){ createFacesDiv();  }, 10000)
+
 	$("#button_ok").click(function(){
 		savePersonalData($("#sexo").val(),$("#edad").val());
 	});
