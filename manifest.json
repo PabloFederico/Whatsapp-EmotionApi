@@ -22,5 +22,8 @@
       "webRequest", 
       "*://web.whatsapp.com/", 
       "*://web.whatsapp.com/?*"
-   ]
+   ],
+   "web_accessible_resources": [
+    "img/*.png"
+  ]
 }
