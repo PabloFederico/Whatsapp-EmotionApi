@@ -2,12 +2,13 @@
 
 $("document").ready(function(){
 	
-	//if(!isInCacheData())	
-		//createQuestionDiv();
-	setInterval(function(){ createFacesDiv();  }, 10000)
+	if(!isInCacheData())	
+		createQuestionDiv();
+	//setInterval(function(){ createFacesDiv();  }, 10000)
 
 	$("#button_ok").click(function(){
 		savePersonalData($("#sexo").val(),$("#edad").val());
+		$("#popup-personal").remove();
 	});
 })
 
@@ -30,38 +31,40 @@ function isInCacheData(){
 }
 
 function createQuestionDiv(){
-	
-	var div = document.createElement("div");
-	
+		
 	/*Styles*/
+	/*DIV*/
+	var div = document.createElement("div");
+	div.id = "popup-personal";
 	div.style.top = "0px";
 	div.style.left = "0px";
 	div.style.position = "fixed";
-	div.style.backgroundColor= "#5c9874";
-	div.style.width = "250px";
-	div.style.height = "100px";
-	div.style.borderRadius = "5px";
-	
-	
+	div.style.backgroundColor= "#dd4b39";
+	div.style.width = "20%";
+	div.style.height = "auto";
+	div.style.borderRadius = "20px";
+		
 	/*Inside the div*/
+	/*DIV row*/
 	var row = document.createElement("div");
 	row.className = "row";
-	row.style.marginTop = "5px";
 	row.style.textAlign = "center";
 	row.style.color = "white";
 	
 	var col1 = document.createElement("div");
 	col1.className = "col-md-6";
-	col1.innerHTML = "<p>SEXO</p><select class='form-control' style='width:90% !important;margin-left:5% !important;' id='sexo'><option>F</option><option>M</option></select>";
+	col1.innerHTML = "<h3>SEXO</h3><select class='form-control' style='width:50% !important;margin-left:25% !important;' id='sexo'><option>F</option><option>M</option></select>";
 	
 	var col2 = document.createElement("div");
 	col2.className ="col-md-6";
-	col2.innerHTML = "<p>EDAD</p><input type='text' class='form-control' id='edad' style='width:90% !important;margin-left:5% !important;' id='edad'>";
+	col2.innerHTML = "<h3>EDAD</h3><select class='form-control' id='edad' style='width:50% !important;margin-left:25% !important;'><option> 20 o menos </option><option>20-25</option><option>25-35</option><option>35-45</option><option>45 o más</option></select>";
 	
 	row.appendChild(col1);
 	row.appendChild(col2);	
 	div.appendChild(row);
 	
+	/*Inside the div*/
+	/*DIV row*/
 	var row2 = document.createElement("div");
 	row2.className = "row";
 	row2.style.textAlign = "center";
@@ -69,7 +72,7 @@ function createQuestionDiv(){
 	
 	var coldown = document.createElement("div");
 	coldown.className = "col-md-12";
-	coldown.innerHTML = "<button id='button_ok'>OK!</button>";	
+	coldown.innerHTML = "<button id='button_ok' style='width:30%;margin-top:10px;margin-bottom:10px;color:black;'>Enviar</button>";	
 	
 	row2.appendChild(coldown);
 	
