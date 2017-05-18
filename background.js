@@ -2,10 +2,10 @@
 
 $("document").ready(function(){
 	
-	if(!isInCacheData())	
-		createQuestionDiv();
+	//if(!isInCacheData())	
+		//createQuestionDiv();
 	//setInterval(function(){ createFacesDiv();  }, 10000)
-
+	createFacesDiv();
 	$("#button_ok").click(function(){
 		savePersonalData($("#sexo").val(),$("#edad").val());
 		$("#popup-personal").remove();
@@ -89,7 +89,7 @@ function createFacesDiv(){
 	var img1 = chrome.extension.getURL("img/emo1.png");
 	var img2 = chrome.extension.getURL("img/emo2.png");
 	var img3 = chrome.extension.getURL("img/emo4.png");
-	div.innerHTML = "<table style='background-color: #c5c5c5;'><tr><th colspan='3'>¿Como estas de animo?</th></tr><tr><td><img src="+img1+" style='width:100px'></td><td><img src="+img2+" style='width:100px'></td><td><img src="+img3+" style='width:100px'></td></tr><tr><td style='text-align:center;'>Triste</td><td style='text-align:center;'>Contento</td><td style='text-align:center;'>Enojado</td></tr></table>";
+	div.innerHTML = "<div id='content' style='background-color: #dd4b39; width:30%; height:auto;border-radius:20px;'><h3 style='color:white;text-align:center;'>¿Cómo estás de ánimo?</h3><img src="+img1+" style='width: 20%;margin-left:10%;'><img src="+img2+" style='width: 20%;margin-left:10%;'><img src="+img3+" style='width: 20%;margin-left:10%;'></div>";
 	document.body.appendChild(div);	
 	
 }
