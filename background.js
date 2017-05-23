@@ -6,9 +6,18 @@ $("document").ready(function(){
 		//createQuestionDiv();
 	//setInterval(function(){ createFacesDiv();  }, 10000)
 	createFacesDiv();
+
 	$("#button_ok").click(function(){
 		savePersonalData($("#sexo").val(),$("#edad").val());
 		$("#popup-personal").remove();
+	});
+	
+	$("#angry").click(function(){
+			alert("Seip");
+	});
+	
+	$("#angry").hover(function(){
+			$(this).css('cursor','pointer');
 	});
 })
 
@@ -82,14 +91,46 @@ function createQuestionDiv(){
 	
 }
 
+
 function createFacesDiv(){
 	
 	var div = document.createElement("div");
-	div.className = "emotions";
+	div.id = "popup-faces";
+	div.style.top = "0px";
+	div.style.left = "0px";
+	div.style.position = "fixed";
+	div.style.backgroundColor= "#dd4b39";
+	div.style.width = "20%";
+	div.style.height = "auto";
+	div.style.borderRadius = "20px";
+	
 	var img1 = chrome.extension.getURL("img/emo1.png");
 	var img2 = chrome.extension.getURL("img/emo2.png");
 	var img3 = chrome.extension.getURL("img/emo4.png");
-	div.innerHTML = "<div id='content' style='background-color: #dd4b39; width:30%; height:auto;border-radius:20px;'><h3 style='color:white;text-align:center;'>¿Cómo estás de ánimo?</h3><img src="+img1+" style='width: 20%;margin-left:10%;'><img src="+img2+" style='width: 20%;margin-left:10%;'><img src="+img3+" style='width: 20%;margin-left:10%;'></div>";
+	
+	var row = document.createElement("div");
+	row.className = "row";
+	row.style.textAlign = "center";
+	row.style.color = "white";
+	
+	var col1 = document.createElement("div");
+	col1.className = "col-md-4";
+	col1.innerHTML = "<img id='cry' src="+img1+" style='width: 100%;'>";
+	
+	var col2 = document.createElement("div");
+	col2.className ="col-md-4";
+	col2.innerHTML = "<img id='happy' src="+img2+" style='width: 100%;'>";
+	
+	var col3 = document.createElement("div");
+	col3.className ="col-md-4";
+	col3.innerHTML = "<img id='angry' src="+img3+" style='width: 100%;'>";
+	
+	row.appendChild(col1);
+	row.appendChild(col2);
+	row.appendChild(col3);
+	
+	div.appendChild(row);
+		
 	document.body.appendChild(div);	
 	
 }
