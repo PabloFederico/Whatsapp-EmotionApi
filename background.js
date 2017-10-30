@@ -3,9 +3,9 @@
 $("document").ready(function(){
 	
 	//if(!isInCacheData())	
-		createQuestionDiv();
+		//createQuestionDiv();
 	//setInterval(function(){ createFacesDiv();  }, 10000)
-	//createFacesDiv();
+	createFacesDiv();
 
 	$("#button_ok").click(function(){
 		savePersonalData($("#sexo").val(),$("#edad").val());
@@ -13,10 +13,26 @@ $("document").ready(function(){
 	});
 	
 	$("#angry").click(function(){
-			alert("Seip");
+			alert("Estoy enojado");
 	});
 	
 	$("#angry").hover(function(){
+			$(this).css('cursor','pointer');
+	});
+	
+	$("#happy").click(function(){
+			alert("Estoy feliz");
+	});
+	
+	$("#happy").hover(function(){
+			$(this).css('cursor','pointer');
+	});
+	
+	$("#cry").click(function(){
+			alert("Estoy triste");
+	});
+	
+	$("#cry").hover(function(){
 			$(this).css('cursor','pointer');
 	});
 })
@@ -99,13 +115,22 @@ function createFacesDiv(){
 	div.style.left = "0px";
 	div.style.position = "fixed";
 	div.style.backgroundColor= "#dd4b39";
-	div.style.width = "20%";
 	div.style.height = "auto";
 	div.style.borderRadius = "20px";
 	
 	var img1 = chrome.extension.getURL("img/emo1.png");
 	var img2 = chrome.extension.getURL("img/emo2.png");
 	var img3 = chrome.extension.getURL("img/emo4.png");
+	
+	var rowMessage = document.createElement("div");
+	rowMessage.className = "row";
+	rowMessage.style.textAlign = "center";
+	rowMessage.style.color = "white";
+	
+	var message = document.createElement("p");
+	message.innerHTML = "¿Cómo te sentis ahora?"
+	
+	rowMessage.appendChild(message);
 	
 	var row = document.createElement("div");
 	row.className = "row";
@@ -114,20 +139,21 @@ function createFacesDiv(){
 	
 	var col1 = document.createElement("div");
 	col1.className = "col-md-4";
-	col1.innerHTML = "<img id='cry' src="+img1+" style='width: 100%;'>";
+	col1.innerHTML = "<img id='cry' src="+img1+" style='width: 80px; height:80px'>";
 	
 	var col2 = document.createElement("div");
 	col2.className ="col-md-4";
-	col2.innerHTML = "<img id='happy' src="+img2+" style='width: 100%;'>";
+	col2.innerHTML = "<img id='happy' src="+img2+" style='width: 80px; height:80px'>";
 	
 	var col3 = document.createElement("div");
 	col3.className ="col-md-4";
-	col3.innerHTML = "<img id='angry' src="+img3+" style='width: 100%;'>";
+	col3.innerHTML = "<img id='angry' src="+img3+" style='width: 80px; height:80px'>";
 	
 	row.appendChild(col1);
 	row.appendChild(col2);
 	row.appendChild(col3);
 	
+	div.appendChild(rowMessage);
 	div.appendChild(row);
 		
 	document.body.appendChild(div);	
