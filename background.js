@@ -3,9 +3,9 @@
 $("document").ready(function(){
 	
 	//if(!isInCacheData())	
-		//createQuestionDiv();
+		createQuestionDiv();
 	//setInterval(function(){ createFacesDiv();  }, 10000)
-	createFacesDiv();
+	//createFacesDiv();
 
 	$("#button_ok").click(function(){
 		savePersonalData($("#sexo").val(),$("#edad").val());
@@ -49,9 +49,8 @@ function createQuestionDiv(){
 	div.style.left = "0px";
 	div.style.position = "fixed";
 	div.style.backgroundColor= "#dd4b39";
-	div.style.width = "20%";
 	div.style.height = "auto";
-	div.style.borderRadius = "20px";
+	div.style.borderRadius = "5px";
 		
 	/*Inside the div*/
 	/*DIV row*/
@@ -62,11 +61,11 @@ function createQuestionDiv(){
 	
 	var col1 = document.createElement("div");
 	col1.className = "col-md-6";
-	col1.innerHTML = "<h3>SEXO</h3><select class='form-control' style='width:50% !important;margin-left:25% !important;' id='sexo'><option>F</option><option>M</option></select>";
+	col1.innerHTML = "<h3>SEXO</h3><select class='form-control' id='sexo'><option>F</option><option>M</option></select>";
 	
 	var col2 = document.createElement("div");
 	col2.className ="col-md-6";
-	col2.innerHTML = "<h3>EDAD</h3><select class='form-control' id='edad' style='width:50% !important;margin-left:25% !important;'><option> 20 o menos </option><option>20-25</option><option>25-35</option><option>35-45</option><option>45 o más</option></select>";
+	col2.innerHTML = "<h3>EDAD</h3><select class='form-control' id='edad'><option> 20 o menos </option><option>20-25</option><option>25-35</option><option>35-45</option><option>45 o más</option></select>";
 	
 	row.appendChild(col1);
 	row.appendChild(col2);	
@@ -81,7 +80,7 @@ function createQuestionDiv(){
 	
 	var coldown = document.createElement("div");
 	coldown.className = "col-md-12";
-	coldown.innerHTML = "<button id='button_ok' style='width:30%;margin-top:10px;margin-bottom:10px;color:black;'>Enviar</button>";	
+	coldown.innerHTML = "<button id='button_ok' class='btn-default' style='width:30%;margin-top:10px;margin-bottom:10px;color:black;'>Enviar</button>";	
 	
 	row2.appendChild(coldown);
 	
