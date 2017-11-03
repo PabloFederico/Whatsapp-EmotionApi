@@ -32,6 +32,9 @@ $("document").ready(function(){
 			$(this).css('cursor','pointer');
 			});
 	
+	$(".sfibbbc").keypress(function(){
+		guardarCadencia();
+	});
 
 })
 
@@ -178,6 +181,27 @@ function guardarSentimiento(carita){
 		object = JSON.stringify(object);
 		array_sent.push(object);
 		localStorage.setItem('arraySentimientos', JSON.stringify(array_sent))
+		
+	}
+	
+}
+
+function guardarCadencia(){
+	
+	var tiempo = new Date().getTime();
+	var array_caden = localStorage.getItem('arrayCadencia');
+	
+	if (array_caden == null) {
+		
+		var array = new Array();
+		array.push(tiempo);
+		localStorage.setItem('arrayCadencia', JSON.stringify(array));
+		
+	} else {
+		
+		array_caden = JSON.parse(array_caden);
+		array_caden.push(tiempo);
+		localStorage.setItem('arrayCadencia', JSON.stringify(array_caden));
 		
 	}
 	
