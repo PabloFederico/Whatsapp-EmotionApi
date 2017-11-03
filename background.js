@@ -6,35 +6,33 @@ $("document").ready(function(){
 		//createQuestionDiv();
 	//setInterval(function(){ createFacesDiv();  }, 10000)
 	createFacesDiv();
-
+		
 	$("#button_ok").click(function(){
 		savePersonalData($("#sexo").val(),$("#edad").val());
 		$("#popup-personal").remove();
 	});
 	
 	$("#angry").click(function(){
-			alert("Estoy enojado");
-	});
-	
-	$("#angry").hover(function(){
+			guardarSentimiento("enojado");
+	}).hover(function(){
 			$(this).css('cursor','pointer');
-	});
+			});
+	
 	
 	$("#happy").click(function(){
-			alert("Estoy feliz");
-	});
-	
-	$("#happy").hover(function(){
+			guardarSentimiento("feliz");
+	}).hover(function(){
 			$(this).css('cursor','pointer');
-	});
+			});
+	
 	
 	$("#cry").click(function(){
-			alert("Estoy triste");
-	});
-	
-	$("#cry").hover(function(){
+			guardarSentimiento("triste");
+	}).hover(function(){
 			$(this).css('cursor','pointer');
-	});
+			});
+	
+
 })
 
 function savePersonalData(sexo,edad){
@@ -157,5 +155,30 @@ function createFacesDiv(){
 	div.appendChild(row);
 		
 	document.body.appendChild(div);	
+	
+}
+
+function guardarSentimiento(carita){
+	
+	var tiempo = new Date().getTime();
+	
+	var array_sent = localStorage.getItem('arraySentimientos');
+	if (array_sent == null){
+		
+		var array = new Array();
+		var object = {"Estado":carita,"Tmp":tiempo};
+		object = JSON.stringify(object)
+		array.push(object);
+		localStorage.setItem('arraySentimientos', JSON.stringify(array));
+	} else {
+		
+		array_sent = JSON.parse(array_sent);
+		
+		var object = {"Estado":carita,"Tmp":tiempo};
+		object = JSON.stringify(object);
+		array_sent.push(object);
+		localStorage.setItem('arraySentimientos', JSON.stringify(array_sent))
+		
+	}
 	
 }
