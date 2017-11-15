@@ -31,6 +31,12 @@ $("document").ready(function(){
 	}).hover(function(){
 			$(this).css('cursor','pointer');
 			});
+			
+	$("#tired").click(function(){
+			guardarSentimiento("tired");
+	}).hover(function(){
+			$(this).css('cursor','pointer');
+			});
 	
 	$(".sfibbbc").keypress(function(){
 		guardarCadencia();
@@ -122,6 +128,7 @@ function createFacesDiv(){
 	var img1 = chrome.extension.getURL("img/emo1.png");
 	var img2 = chrome.extension.getURL("img/emo2.png");
 	var img3 = chrome.extension.getURL("img/emo4.png");
+	var img4 = chrome.extension.getURL("img/emo3.png");
 	
 	var rowMessage = document.createElement("div");
 	rowMessage.className = "row";
@@ -139,20 +146,25 @@ function createFacesDiv(){
 	row.style.color = "white";
 	
 	var col1 = document.createElement("div");
-	col1.className = "col-md-4";
+	col1.className = "col-md-3";
 	col1.innerHTML = "<img id='cry' src="+img1+" style='width: 80px; height:80px'>";
 	
 	var col2 = document.createElement("div");
-	col2.className ="col-md-4";
+	col2.className ="col-md-3";
 	col2.innerHTML = "<img id='happy' src="+img2+" style='width: 80px; height:80px'>";
 	
 	var col3 = document.createElement("div");
-	col3.className ="col-md-4";
+	col3.className ="col-md-3";
 	col3.innerHTML = "<img id='angry' src="+img3+" style='width: 80px; height:80px'>";
+	
+	var col4 = document.createElement("div");
+	col4.className ="col-md-3";
+	col4.innerHTML = "<img id='tired' src="+img4+" style='width: 80px; height:80px'>";
 	
 	row.appendChild(col1);
 	row.appendChild(col2);
 	row.appendChild(col3);
+	row.appendChild(col4);
 	
 	div.appendChild(rowMessage);
 	div.appendChild(row);
