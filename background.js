@@ -147,19 +147,19 @@ function createFacesDiv(){
 	
 	var col1 = document.createElement("div");
 	col1.className = "col-md-3";
-	col1.innerHTML = "<img id='cry' src="+img1+" style='width: 80px; height:80px'>";
+	col1.innerHTML = "<img id='cry' src="+img1+" style='width: 80px; height:80px' title='Triste'>";
 	
 	var col2 = document.createElement("div");
 	col2.className ="col-md-3";
-	col2.innerHTML = "<img id='happy' src="+img2+" style='width: 80px; height:80px'>";
+	col2.innerHTML = "<img id='happy' src="+img2+" style='width: 80px; height:80px' title='Feliz'>";
 	
 	var col3 = document.createElement("div");
 	col3.className ="col-md-3";
-	col3.innerHTML = "<img id='angry' src="+img3+" style='width: 80px; height:80px'>";
+	col3.innerHTML = "<img id='angry' src="+img3+" style='width: 80px; height:80px' title='Enojado'>";
 	
 	var col4 = document.createElement("div");
 	col4.className ="col-md-3";
-	col4.innerHTML = "<img id='tired' src="+img4+" style='width: 80px; height:80px'>";
+	col4.innerHTML = "<img id='tired' src="+img4+" style='width: 80px; height:80px' title='Cansado'>";
 	
 	row.appendChild(col1);
 	row.appendChild(col2);
