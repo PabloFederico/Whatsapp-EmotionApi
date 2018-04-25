@@ -123,7 +123,7 @@ function createFacesDiv(){
 	div.style.position = "fixed";
 	div.style.backgroundColor= "#dd4b39";
 	div.style.height = "auto";
-	div.style.borderRadius = "20px";
+	div.style.borderRadius = "45px";
 	
 	var img1 = chrome.extension.getURL("img/emo1.png");
 	var img2 = chrome.extension.getURL("img/emo2.png");
@@ -136,6 +136,7 @@ function createFacesDiv(){
 	rowMessage.style.color = "white";
 	
 	var message = document.createElement("p");
+	p.style.font-size = 18px;
 	message.innerHTML = "¿Cómo te sentis ahora?"
 	
 	rowMessage.appendChild(message);
@@ -159,7 +160,7 @@ function createFacesDiv(){
 	
 	var col4 = document.createElement("div");
 	col4.className ="col-md-3";
-	col4.innerHTML = "<img id='tired' src="+img4+" style='width: 80px; height:80px' title='Cansado'>";
+	col4.innerHTML = "<img id='tired' src="+img4+" style='width: 75px; height:75px' title='Cansado'>";
 	
 	row.appendChild(col1);
 	row.appendChild(col2);
