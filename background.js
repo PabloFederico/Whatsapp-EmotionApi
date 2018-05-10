@@ -68,12 +68,12 @@ function createQuestionDiv(){
 	/*DIV*/
 	var div = document.createElement("div");
 	div.id = "popup-personal";
-	div.style.top = "0px";
+	div.style.top = "1%";
 	div.style.left = "0px";
 	div.style.position = "fixed";
 	div.style.backgroundColor= "#dd4b39";
 	div.style.height = "auto";
-	div.style.borderRadius = "35px";
+	div.style.borderRadius = "45px";
 	div.style.width = "20%";
 		
 	/*Inside the div*/
@@ -85,11 +85,11 @@ function createQuestionDiv(){
 	
 	var col1 = document.createElement("div");
 	col1.className = "col-md-6";
-	col1.innerHTML = "<p>SEXO</p><select class='form-control' style='width:50%;margin-left:25%' id='sexo'><option>F</option><option>M</option></select>";
+	col1.innerHTML = "<p style='font-size: 18px;'>SEXO</p><select class='form-control' style='width:50%;margin-left:25%' id='sexo'><option>F</option><option>M</option></select>";
 	
 	var col2 = document.createElement("div");
 	col2.className ="col-md-6";
-	col2.innerHTML = "<p>EDAD</p><select class='form-control' style='width:80%;margin-left:10%' id='edad'><option> 20 o menos </option><option>20-25</option><option>25-35</option><option>35-45</option><option>45 o más</option></select>";
+	col2.innerHTML = "<p style='font-size: 18px;'>EDAD</p><select class='form-control' style='width:80%;margin-left:10%' id='edad'><option> 20 o menos </option><option>20-25</option><option>25-35</option><option>35-45</option><option>45 o más</option></select>";
 	
 	row.appendChild(col1);
 	row.appendChild(col2);	
@@ -104,7 +104,7 @@ function createQuestionDiv(){
 	
 	var coldown = document.createElement("div");
 	coldown.className = "col-md-12";
-	coldown.innerHTML = "<button id='button_ok' class='btn-default' style='width:30%;margin-top:10px;margin-bottom:10px;color:black;'>OK!</button>";	
+	coldown.innerHTML = "<button id='button_ok' class='btn-default' style='width:20%;margin-top:10px;margin-bottom:10px;color:white;background:transparent;font-size:16px;'>OK!</button>";	
 	
 	row2.appendChild(coldown);
 	
@@ -119,7 +119,7 @@ function createFacesDiv(){
 	
 	var div = document.createElement("div");
 	div.id = "popup-faces";
-	div.style.top = "0px";
+	div.style.top = "1%";
 	div.style.left = "0px";
 	div.style.position = "fixed";
 	div.style.backgroundColor= "#dd4b39";
